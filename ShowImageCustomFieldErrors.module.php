@@ -35,8 +35,8 @@ class ShowImageCustomFieldErrors extends WireData implements Module {
 			}
 		}
 
-		// If there are errors then set a custom property on the inputfield
-		if($errors) $inputfield->customFieldErrors = true;
+		// Set a custom property on the inputfield indicating whether any custom fields have errors
+		$inputfield->customFieldErrors = $errors;
 	}
 
 	/**
@@ -53,6 +53,9 @@ class ShowImageCustomFieldErrors extends WireData implements Module {
 
 		// Return early if there is no corresponding field or page
 		if(!$field || !$page) return;
+
+		// Return early if the custom property hasn't been set (i.e. custom fields are not enabled)
+		if($inputfield->customFieldErrors === null) return;
 
 		$name = $inputfield->name;
 		$key = "$name|$page->id";

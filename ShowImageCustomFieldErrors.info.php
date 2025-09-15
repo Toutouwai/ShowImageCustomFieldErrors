@@ -3,7 +3,7 @@
 $info = array(
 	'title' => 'Show Image Custom Field Errors',
 	'summary' => 'Makes custom fields for images visible when there is an error, e.g. empty required fields.',
-	'version' => '0.1.0',
+	'version' => '0.1.1',
 	'author' => 'Robin Sallis',
 	'href' => 'https://github.com/Toutouwai/ShowImageCustomFieldErrors',
 	'icon' => 'eye',
